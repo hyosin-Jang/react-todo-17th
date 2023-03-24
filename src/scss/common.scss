@@ -1,0 +1,36 @@
+input {
+	border: none;
+	border-radius: 1rem;
+	width: 80%;
+	font-size: 1.2rem;
+	background-color: rgba(213, 213, 213, 0.5);
+
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+input[type="text"] {
+	padding: 5px 10px;
+}
+
+.title {
+	font-size: 1.5em;
+	margin-left: 1rem;
+}
+
+.button {
+	font-size: 1.5rem;
+	cursor: pointer;
+	border-radius: 0;
+	width: 2rem;
+	border: 0;
+	background-color: transparent;
+	box-shadow: none;
+
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}
