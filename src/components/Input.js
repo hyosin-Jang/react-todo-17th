@@ -1,14 +1,19 @@
-import styled from "styled-components"
+import React from "react"
 
 const Input = ({onChange}) => {
 	return (
-		<input
-			type="text"
-			onChange={onChange}
-			autoFocus
-			required
-		/>
+		<>
+			<input
+				placeholder="Type to do list"
+				className="input"
+				onChange={onChange}
+				autoFocus
+				required
+				type="text"
+				name="text"
+			/>
+		</>
 	)
 }
 
-export default Input
+export default React.memo(Input)
