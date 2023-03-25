@@ -1,12 +1,14 @@
+import React from "react"
 import TodoItem from "./TodoItem"
 
-const TodoContainer = ({todo, status, toggleStatus, removeItem}) => {
+const TodoContainer = ({todo, toggleStatus, removeItem}) => {
 	return (
-		<div>
+		<>
 			{todo &&
-				todo.map(
-					(item) =>
-						item.status === status && (
+				todo
+					.sort((a, b) => b.priority - a.priority)
+					.map((item) => {
+						return (
 							<TodoItem
 								key={item.id}
 								item={item}
@@ -14,9 +16,9 @@ const TodoContainer = ({todo, status, toggleStatus, removeItem}) => {
 								removeItem={removeItem}
 							/>
 						)
-				)}
-		</div>
+					})}
+		</>
 	)
 }
 
-export default TodoContainer
+export default React.memo(TodoContainer)
