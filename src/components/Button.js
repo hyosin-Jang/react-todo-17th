@@ -1,12 +1,18 @@
-const Button = ({onClick}) => {
+import React from "react"
+
+const Button = ({onClick, clicked, type, value, className}) => {
+	const getClassName = () => {
+		return clicked === value ? `button ${className} button-clicked` : `button ${className}`
+	}
 	return (
 		<button
-			type="submit"
-			className="button"
-			onClick={onClick}>
-			+
+			type={type}
+			onClick={onClick}
+			value={value}
+			className={getClassName()}>
+			{value}
 		</button>
 	)
 }
 
-export default Button
+export default React.memo(Button)
